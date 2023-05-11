@@ -1,0 +1,26 @@
+name: background_location_tracker_example
+description: Demonstrates how to use the background_location_tracker plugin.
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+#  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  background_location_tracker:
+    path: ../
+  flutter:
+    sdk: flutter
+  flutter_local_notifications: ^13.0.0
+  permission_handler: ^10.2.0
+  shared_preferences: ^2.0.18
+  sqflite: ^2.2.6
+  path_provider: ^2.0.13
+  http: ^0.13.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
