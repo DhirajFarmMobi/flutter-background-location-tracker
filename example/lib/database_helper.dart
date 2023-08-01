@@ -47,7 +47,7 @@ class DatabaseHelper {
   Future<int> getCount() async {
     var count = 0;
     if (db != null) {
-      dynamic list = await db.rawQuery('SELECT * FROM $table where status=0');
+      final dynamic list = await db.rawQuery('SELECT * FROM $table where status=0');
       if (list is List<dynamic>) {
         count = list.length;
       }
@@ -58,7 +58,7 @@ class DatabaseHelper {
   Future<List<Map>> getData() async {
     final data = <Map>[];
     if (db != null) {
-      dynamic list = await db.rawQuery('SELECT * FROM $table where status=0');
+      final dynamic list = await db.rawQuery('SELECT * FROM $table where status=0');
       if (list is List<Map>) {
         data.addAll(list);
       }
@@ -67,7 +67,7 @@ class DatabaseHelper {
   }
 
   Future<void> updateData(dynamic row) async {
-    dynamic id = row['id'] ?? '';
+    final dynamic id = row['id'] ?? '';
     if(db!=null){
       await db.update('$table', {'status':1}, where: 'id = ?', whereArgs: [id.toString()]);
     }
